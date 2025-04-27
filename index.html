@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live on! Wakaba - 나무 정령 스트리머 육성 & 힐링 게임</title>
+    <!-- favicon.png는 그대로 유지 -->
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <!-- 실제 Google Analytics에서 제공하는 코드 전체를 여기에 붙여넣으세요 -->
+    <!-- YOUR_GA_MEASUREMENT_ID 부분은 실제 추적 ID로 대체됩니다. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_GA_MEASUREMENT_ID');
+    </script>
+
 </head>
 <body>
 
@@ -13,11 +26,13 @@
 
         <!-- ========= 1. Hero Section ========= -->
         <section id="hero">
+            <!-- 배경 이미지는 CSS에서 변경 -->
             <div class="hero-background"></div>
             <div class="hero-overlay"></div>
             <!-- container 클래스 추가하여 내용 중앙 정렬 -->
             <div class="hero-content container">
-                <img src="images/logo.png" alt="Live on! Wakaba 로고" class="hero-logo">
+                <!-- 로고 이미지는 webp로 변경 -->
+                <img src="images/logo.webp" alt="Live on! Wakaba 로고" class="hero-logo">
                 <p>이부키 산에서 내려온 나무 정령,</p>
                 <p>와카바의 매니저가 되어주세요!</p>
             </div>
@@ -31,7 +46,7 @@
                 <h2>어떤 게임일까?</h2>
                 <div class="text-content">
                     <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>는 귀엽고 순수한 나무 정령 '이부키 와카바'의 매니저가 되어, 신입 스트리머인 그녀의 성장을 돕는 <strong>방치형 캐릭터 육성 시뮬레이션 게임</strong>입니다. 와카바의 상태를 관리하고, 대화하며 호감도를 쌓고, 방송 활동을 서포트하며 최고의 스트리머로 키워주세요.</p>
-                    <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>의 핵심은 힐링과 교감입니다. 물 주기, 청소, 대화 등의 상호작용을 통해 와카바의 상태는 점진적으로 변화하며, 때때로 발생하는 이벤트를 통해 아름다운 고퀄리티 일러스트를 해금할 수 있습니다. 바쁜 일상 속, 당신의 PC에서 와카바와 교감하며 <strong>느긋하고 편안한 시간</strong>을 경험하세요.</p>
+                    <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>의 핵심은 힐링과 교감입니다. 물 주기, 청소, 대화 등의 상호작용을 통해 와카바의 상태는 점진적으로 변화하며, 때때로 발생하는 이벤트를 통해 아름다운 고퀄리티 일러스트를 해금할 수 있습니다. 바쁜 일상 속, 당신의 PC에서 와카바와 교감하며 편안한 시간을 경험하세요.</p>
                     <h3>어떻게 개발했을까?</h3>
                     <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>는 코딩 경험이 전무한 문돌이가 LLM(주로 제미니 2.5)을 활용해 <strong>바이브 코딩(!)</strong> 형식으로 만든 파이선 기반의 <strong>1인 개발 인디 게임</strong>입니다. 코딩의 K도 모르는 문과 인간이 LLM을 손에 넣으면 무엇을 만들어낼 수 있을까요? 지금 바로 다운받아서 확인해 보세요.</p>
                 </div>
@@ -46,12 +61,13 @@
                  <div class="grid">
                      <div class="character-animation-container">
                          <div class="character-animation">
-                            <img src="images/wakaba-pout.png" alt="와카바 삐진 표정">
-                            <img src="images/wakaba-smile.png" alt="와카바 기본 미소" class="active"> <!-- 기본 활성 이미지 변경 -->
-                            <img src="images/wakaba-happy.png" alt="와카바 활짝 웃는 표정">
-                            <img src="images/wakaba-wink.png" alt="와카바 윙크">
-                            <img src="images/wakaba-sad.png" alt="와카바 슬픈 표정">
-                            <img src="images/wakaba-surprised.png" alt="와카바 놀란 표정">
+                            <!-- 캐릭터 애니메이션 이미지들 webp로 변경 -->
+                            <img src="images/wakaba-pout.webp" alt="와카바 삐진 표정">
+                            <img src="images/wakaba-smile.webp" alt="와카바 기본 미소" class="active"> <!-- 기본 활성 이미지 변경 -->
+                            <img src="images/wakaba-happy.webp" alt="와카바 활짝 웃는 표정">
+                            <img src="images/wakaba-wink.webp" alt="와카바 윙크">
+                            <img src="images/wakaba-sad.webp" alt="와카바 슬픈 표정">
+                            <img src="images/wakaba-surprised.webp" alt="와카바 놀란 표정">
                          </div>
                      </div>
                      <div class="text-content">
@@ -88,9 +104,10 @@
                         <h3>특별 일러스트 수집</h3>
                         <p class="feature-text">와카바와의 관계가 깊어지면 특별한 순간이 담긴 일러스트를 얻을 수 있어요! 앨범에서 일러스트를 모두 해금해 보세요. 총 16종의 일러스트를 수집할 수 있습니다.</p>
                         <div class="teaser-images">
-                             <img src="images/teaser-casual.png" alt="티저 이미지 1">
-                             <img src="images/teaser-plant.png" alt="티저 이미지 2">
-                             <img src="images/teaser-bikini.png" alt="티저 이미지 3">
+                             <!-- 티저 이미지들 webp로 변경 -->
+                             <img src="images/teaser-casual.webp" alt="티저 이미지 1">
+                             <img src="images/teaser-plant.webp" alt="티저 이미지 2">
+                             <img src="images/teaser-bikini.webp" alt="티저 이미지 3">
                         </div>
                     </div>
                      <div class="feature-item">
@@ -113,12 +130,13 @@
                 <h2>스크린샷 갤러리</h2>
                 <p class="gallery-intro"><strong>〈Live on! Wakaba〉</strong>의 실제 플레이 화면을 스크린샷으로 확인해 보세요.</p>
                 <div class="grid">
-                    <img src="images/sc1.png" alt="게임 스크린샷 1">
-                    <img src="images/sc2.png" alt="게임 스크린샷 2">
-                    <img src="images/sc3.png" alt="게임 스크린샷 3">
-                    <img src="images/sc4.png" alt="게임 스크린샷 4">
-                    <img src="images/sc5.png" alt="게임 스크린샷 5">
-                    <img src="images/sc6.png" alt="게임 스크린샷 6">
+                    <!-- 스크린샷 이미지들 webp로 변경 -->
+                    <img src="images/sc1.webp" alt="게임 스크린샷 1">
+                    <img src="images/sc2.webp" alt="게임 스크린샷 2">
+                    <img src="images/sc3.webp" alt="게임 스크린샷 3">
+                    <img src="images/sc4.webp" alt="게임 스크린샷 4">
+                    <img src="images/sc5.webp" alt="게임 스크린샷 5">
+                    <img src="images/sc6.webp" alt="게임 스크린샷 6">
                 </div>
             </div>
         </section>
@@ -185,7 +203,7 @@
                  <h2>만든 사람은 누구?</h2>
                  <h3>개발자 이야기</h3>
                  <div class="text-content">
-                     <p class="text-justify">안녕하세요? <strong>〈Live on! Wakaba〉</strong>를 만든 야차완입니다. 처음에는 단순히 AI 이미지와 바이브 코딩으로 뭘 할 수 있을지 알아보자는 생각으로 시작했는데, 한 달이 지난 지금 놀랍게도 게임 프로젝트 하나를 완성할 수 있었네요. 처음 만들어본 게임이기 때문에 부족한 점이 많겠습니다만, 초보 개발자가 다 그렇겠거니 생각하시고 편하게 즐겨주시면 감사하겠습니다. 게임에 대한 피드백, 버그 제보, 격려 등은 X(트위터) 쪽으로 부탁드립니다. 2025. 04. 27.</p>
+                     <p class="text-justify">안녕하세요? <strong>〈Live on! Wakaba〉</strong>를 만든 야차완입니다. 처음에는 단순히 AI 이미지와 바이브 코딩으로 뭘 할 수 있을지 알아보자는 생각으로 시작했는데, 한 달이 지난 지금 놀랍게도 게임 프로젝트 하나를 완성할 수 있었네요. 처음 만들어본 게임이기 때문에 부족한 점이 많겠습니다만, 초보 개발자가 다 그렇겠거니 생각하시고 편하게 즐겨주시면 감사하겠습니다. 게임에 대한 피드백, 버그 제보, 격려 등은 X(트위터) 쪽으로 부탁드립니다. 2025. 04. 23.</p>
                      <p class="developer-link">
                         <a href="https://twitter.com/yakshawan" target="_blank" rel="noopener noreferrer">
                             X(Twitter): @yakshawan
@@ -248,6 +266,7 @@
 
         galleryImages.forEach(img => {
             img.addEventListener('click', () => {
+                // 클릭된 이미지의 src (이미 .webp로 변경됨)를 lightbox 이미지 src로 설정
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 lightbox.classList.add('visible'); // Use a class for visibility and transition

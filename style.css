@@ -194,7 +194,8 @@ strong {
 #hero .hero-background {
     position: absolute;
     inset: 0;
-    background-image: url('images/hero-background.png');
+    /* 배경 이미지 경로 webp로 변경 */
+    background-image: url('images/hero-background.webp');
     background-size: cover; /* 이미지가 영역을 꽉 채우도록 */
     background-position: center; /* 이미지 중앙을 기준으로 표시 */
     z-index: 0;
@@ -213,6 +214,7 @@ strong {
     max-width: 600px; /* 콘텐츠 최대 너비 */
 }
 
+/* 로고 이미지 태그는 HTML에서 src 변경 */
 #hero .hero-logo {
     display: block;
     margin-left: auto;
@@ -230,7 +232,8 @@ strong {
 /* ========= Introduction Section (#introduction) ========= */
 #introduction {
     position: relative; /* 자식 요소(오버레이)의 position 기준 */
-    background-image: url('images/header.png'); /* 이미지 경로 확인! */
+    /* 배경 이미지 경로 webp로 변경 */
+    background-image: url('images/header.webp'); /* 이미지 경로 확인! */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* 스크롤 시 배경 고정 (패럴랙스 효과) - 선택 사항 */
@@ -296,6 +299,7 @@ strong {
     z-index: 1; /* 도형 위에 오도록 */
 }
 
+/* 캐릭터 애니메이션 이미지 태그는 HTML에서 src 변경 */
 #character .character-animation img {
    /* 기존 스타일 유지 */
    position: absolute; inset: 0; width: 100%; height: 100%;
@@ -326,7 +330,7 @@ strong {
 }
 /* #features .feature-item h3 스타일은 Typography 섹션에서 일괄 조정 */
 #features .feature-item p { color: var(--clr-text-muted); margin-bottom: 0; }
-/* 티저 이미지 스타일 */
+/* 티저 이미지 태그는 HTML에서 src 변경 */
 #features .teaser-images { position: absolute; bottom: -15px; right: -20px; width: 50%; height: 50%; opacity: 0.2; pointer-events: none; }
 #features .teaser-images img { position: absolute; bottom: 0; right: 0; width: 80%; height: auto; border-radius: 4px; }
 #features .teaser-images img:nth-child(1) { transform: translate(15%, 15%) rotate(12deg); z-index: 3; }
@@ -341,6 +345,7 @@ strong {
     gap: 1.5rem; /* 24px */
     grid-template-columns: 1fr; /* 항상 1열 */
 }
+/* 갤러리 이미지 태그는 HTML에서 src 변경 */
 #gallery img {
     width: 100%;
     height: auto;
@@ -382,6 +387,7 @@ strong {
     max-height: 90%; /* Max height of the image container */
 }
 
+/* Lightbox 이미지 태그는 JS에서 src 설정 (갤러리 이미지 src를 따름) */
 .lightbox-content img {
     display: block; /* Remove extra space below image */
     max-width: 100%; /* Image fits within content container */
@@ -489,7 +495,8 @@ strong {
 /* ========= Developer Section (#developer) ========= */
 #developer {
     position: relative; /* 오버레이 기준점 */
-    background-image: url('images/wakaba-hoodie-street.png'); /* 새 이미지 경로 적용! */
+    /* 배경 이미지 경로 webp로 변경 */
+    background-image: url('images/wakaba-hoodie-street.webp'); /* 새 이미지 경로 적용! */
     background-size: cover;
     background-position: center top;
     background-attachment: scroll; /* 스크롤 효과 (선택 사항) */
@@ -624,7 +631,7 @@ footer {
     body { font-size: 18px; }
     h1 { font-size: 3.5rem; }
     h2 { font-size: 2.75rem; } /* Adjust h2 size */
-    h3 { font-size: 1.875rem; } /* 30px, Adjust h3 size */
+    h3 { font-size: 1.875rem; /* 30px, Adjust h3 size */ }
     section { padding: 6rem 2rem; }
 
     #hero h1 { font-size: 3rem; }
