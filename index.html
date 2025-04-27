@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live on! Wakaba - 나무 정령 스트리머 육성 & 힐링 게임</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+
+        <!-- ========= 1. Hero Section ========= -->
+        <section id="hero">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <!-- container 클래스 추가하여 내용 중앙 정렬 -->
+            <div class="hero-content container">
+                <img src="images/logo.png" alt="Live on! Wakaba 로고" class="hero-logo">
+                <p>이부키 산에서 내려온 나무 정령,</p>
+                <p>와카바의 매니저가 되어주세요!</p>
+            </div>
+        </section>
+
+        <!-- ========= 2. 게임 소개 (Introduction) ========= -->
+        <section id="introduction">
+            <!-- container 클래스 추가하여 내용 중앙 정렬 -->
+            <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+            <div class="container animate-on-scroll">
+                <h2>어떤 게임일까?</h2>
+                <div class="text-content">
+                    <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>는 귀엽고 순수한 나무 정령 '이부키 와카바'의 매니저가 되어, 신입 스트리머인 그녀의 성장을 돕는 <strong>방치형 캐릭터 육성 시뮬레이션 게임</strong>입니다. 와카바의 상태를 관리하고, 대화하며 호감도를 쌓고, 방송 활동을 서포트하며 최고의 스트리머로 키워주세요.</p>
+                    <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>의 핵심은 힐링과 교감입니다. 물 주기, 청소, 대화 등의 상호작용을 통해 와카바의 상태는 점진적으로 변화하며, 때때로 발생하는 이벤트를 통해 아름다운 고퀄리티 일러스트를 해금할 수 있습니다. 바쁜 일상 속, 당신의 PC에서 와카바와 교감하며 <strong>느긋하고 편안한 시간</strong>을 경험하세요.</p>
+                    <h3>어떻게 개발했을까?</h3>
+                    <p class="text-justify"><strong>〈Live on! Wakaba〉</strong>는 코딩 경험이 전무한 문돌이가 LLM(주로 제미니 2.5)을 활용해 <strong>바이브 코딩(!)</strong> 형식으로 만든 파이선 기반의 <strong>1인 개발 인디 게임</strong>입니다. 코딩의 K도 모르는 문과 인간이 LLM을 손에 넣으면 무엇을 만들어낼 수 있을까요? 지금 바로 다운받아서 확인해 보세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= 3. 캐릭터 소개 ========= -->
+        <section id="character">
+             <!-- container 클래스를 grid 요소 밖으로 빼서 전체 섹션 정렬 -->
+             <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+             <div class="container animate-on-scroll">
+                 <div class="grid">
+                     <div class="character-animation-container">
+                         <div class="character-animation">
+                            <img src="images/wakaba-pout.png" alt="와카바 삐진 표정">
+                            <img src="images/wakaba-smile.png" alt="와카바 기본 미소" class="active"> <!-- 기본 활성 이미지 변경 -->
+                            <img src="images/wakaba-happy.png" alt="와카바 활짝 웃는 표정">
+                            <img src="images/wakaba-wink.png" alt="와카바 윙크">
+                            <img src="images/wakaba-sad.png" alt="와카바 슬픈 표정">
+                            <img src="images/wakaba-surprised.png" alt="와카바 놀란 표정">
+                         </div>
+                     </div>
+                     <div class="text-content">
+                        <h2>와카바는 누구?</h2>
+                        <h3>와카바 이야기</h3>
+                        <p class="text-justify">게임의 주인공, 이부키 와카바(伊吹若葉)는 이부키 산에 사는 삼나무 정령이었습니다. 어느 날 당신을 만난 그녀는 산에서 내려오기로 결심하고, 인간 세상에서 다양한 사람을 만나보기 위해 스트리머가 되기로 했답니다. 과연 와카바는 <strong>SSS급 스트리머</strong>가 될 수 있을까요? 결과는 매니저인 당신의 손에 달렸습니다.</p>
+                        <h3>왜 일본 이름?</h3>
+                        <p class="text-justify">제작자가 일본 서브컬처에 익숙한 십덕이라서 그렇습니다. 2D 캐릭터에 한국인 이름이 붙어 있으면 뭔가 어색한 나머지 그만……. 참고로 와카바라는 이름은 '어린 잎'을 의미한답니다.</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- ========= 4. 주요 기능 (Features) ========= -->
+        <section id="features">
+             <!-- container 클래스를 grid 요소 밖으로 빼서 전체 섹션 정렬 -->
+             <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+            <div class="container animate-on-scroll">
+                <h2>게임 특징</h2>
+                <div class="grid">
+                    <div class="feature-item">
+                        <h3>실시간 상태 및 감정 시스템</h3>
+                        <p>와카바의 허기, 건강, 기분 등 다양한 상태가 실시간으로 변화합니다. 너무 방치하면 컨디션이 떨어질 수 있으니 조심하세요.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>대화와 호감도</h3>
+                        <p>대화 버튼을 눌러 와카바와 이야기하세요. 때로는 선택지가 제시되며, 당신의 반응이 와카바의 반응을 결정합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>고품질 AI 이미지</h3>
+                        <p>게임 내 캐릭터 이미지와 일러스트는 모두 AI(Stable Diffusion)로 생성되었습니다. 와카바의 귀여운 모습을 다양하게 감상해 보세요.</p>
+                    </div>
+                    <div class="feature-item"> <!-- 티저 이미지 포함된 아이템 -->
+                        <h3>특별 일러스트 수집</h3>
+                        <p class="feature-text">와카바와의 관계가 깊어지면 특별한 순간이 담긴 일러스트를 얻을 수 있어요! 앨범에서 일러스트를 모두 해금해 보세요. 총 16종의 일러스트를 수집할 수 있습니다.</p>
+                        <div class="teaser-images">
+                             <img src="images/teaser-casual.png" alt="티저 이미지 1">
+                             <img src="images/teaser-plant.png" alt="티저 이미지 2">
+                             <img src="images/teaser-bikini.png" alt="티저 이미지 3">
+                        </div>
+                    </div>
+                     <div class="feature-item">
+                        <h3>직관적인 UI/UX</h3>
+                        <p>깔끔하게 배치된 반응성 높은 UI로 와카바와 편리하게 상호작용할 수 있습니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>인기 스트리머 되기</h3>
+                        <p>매력, 구독자, 재산 등을 관리해 와카바를 인기 스트리머로 만들어 주세요. F급에서 점차 높은 등급의 스트리머로 성장하게 됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= 5. 갤러리 (스크린샷) ========= -->
+        <section id="gallery">
+             <!-- container 클래스를 grid 요소 밖으로 빼서 전체 섹션 정렬 -->
+             <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+            <div class="container animate-on-scroll">
+                <h2>스크린샷 갤러리</h2>
+                <p class="gallery-intro"><strong>〈Live on! Wakaba〉</strong>의 실제 플레이 화면을 스크린샷으로 확인해 보세요.</p>
+                <div class="grid">
+                    <img src="images/sc1.png" alt="게임 스크린샷 1">
+                    <img src="images/sc2.png" alt="게임 스크린샷 2">
+                    <img src="images/sc3.png" alt="게임 스크린샷 3">
+                    <img src="images/sc4.png" alt="게임 스크린샷 4">
+                    <img src="images/sc5.png" alt="게임 스크린샷 5">
+                    <img src="images/sc6.png" alt="게임 스크린샷 6">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= 6. 다운로드 / 설치 안내 ========= -->
+        <section id="download">
+             <!-- container 클래스 추가하여 내용 중앙 정렬 -->
+             <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+            <div class="container animate-on-scroll">
+                 <h2>지금 바로 플레이하세요!</h2>
+                 <p class="platform-info"><strong>지원 플랫폼:</strong> Windows (PC 환경 권장)</p>
+
+                 <!-- 1. 다운로드 버튼 -->
+                 <div class="button-wrapper">
+                    <!-- 다운로드 링크는 GitHub Releases URL로 나중에 변경 필요 -->
+                    <a href="#" class="download-button">
+                        게임 다운로드 (.zip)
+                    </a>
+                 </div>
+
+                 <!-- 2. 요구 사양 -->
+                 <h3>요구 사양</h3>
+                 <p class="requirements-text">저사양 게임이라서 Windows 7 이상이 돌아가는 PC라면 대부분 실행됩니다.<br>
+                    게임 용량은 약 72MB입니다.</p>
+
+                 <!-- 3. 설치 방법 -->
+                 <h3>설치 방법</h3>
+                 <ol>
+                     <li>게임 다운로드 버튼을 클릭해 압축 파일(.zip)을 다운로드 받습니다.</li>
+                     <li>다운로드 받은 파일을 원하는 폴더에 압축 해제하세요.</li>
+                     <li>폴더 내의 'LiveOnWakaba.exe' 파일을 더블 클릭하여 게임을 실행합니다.</li>
+                 </ol>
+
+                 <!-- 4. FAQ -->
+                 <div class="faq-section">
+                    <h3>자주 묻는 질문 (FAQ)</h3>
+                    <div class="faq-item">
+                        <p><strong>Q. 일러스트를 해금하고 싶어요.</strong></p>
+                        <p>A. 와카바와의 호감도를 높이다 보면 해금 찬스가 찾아옵니다. '대화' 버튼으로 발생하는 상호작용에서 적절한 선택을 하면 일러스트를 얻는 경우가 있습니다. 새 일러스트가 나오지 않는다면 선물 등으로 호감도를 올려주세요!</p>
+                    </div>
+                    <div class="faq-item">
+                        <p><strong>Q. 호감도는 어떻게 올리나요?</strong></p>
+                        <p>A. 선물을 주고, 와카바와 자주 대화해 주세요. 와카바에게 애정을 보여주시면 호감도는 자연스럽게 올라갑니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p><strong>Q. 돈은 어떻게 버나요?</strong></p>
+                        <p>A. 와카바의 귀여움 수치가 높아지고 구독자가 늘어나면 시청자들이 자발적으로 도네이션을 보내줍니다. 와카바를 잘 관리해서 인기를 높여주시면 알아서 재산이 점차 늘어날 거예요.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p><strong>Q. 와카바를 방치했더니 병에 걸렸어요! 어떻게 하죠?</strong></p>
+                        <p>A. 와카바의 건강이 너무 낮아지면 병에 걸릴 수 있어요. '상점'에서 '약' 아이템을 구매해서 사용해주시면 와카바가 다시 건강해집니다. 앞으로는 와카바의 상태를 좀 더 자주 확인해주세요!</p>
+                    </div>
+                 </div>
+                 <!-- ========= FAQ 끝 ========= -->
+
+            </div>
+        </section>
+
+        <!-- ========= 7. 개발자 소개 ========= -->
+        <section id="developer">
+             <!-- container 클래스 추가하여 내용 중앙 정렬 -->
+             <!-- 스크롤 애니메이션 적용 클래스 추가 -->
+            <div class="container animate-on-scroll">
+                 <h2>만든 사람은 누구?</h2>
+                 <h3>개발자 이야기</h3>
+                 <div class="text-content">
+                     <p class="text-justify">안녕하세요? <strong>〈Live on! Wakaba〉</strong>를 만든 야차완입니다. 처음에는 단순히 AI 이미지와 바이브 코딩으로 뭘 할 수 있을지 알아보자는 생각으로 시작했는데, 한 달이 지난 지금 놀랍게도 게임 프로젝트 하나를 완성할 수 있었네요. 처음 만들어본 게임이기 때문에 부족한 점이 많겠습니다만, 초보 개발자가 다 그렇겠거니 생각하시고 편하게 즐겨주시면 감사하겠습니다. 게임에 대한 피드백, 버그 제보, 격려 등은 X(트위터) 쪽으로 부탁드립니다. 2025. 04. 27.</p>
+                     <p class="developer-link">
+                        <a href="https://twitter.com/yakshawan" target="_blank" rel="noopener noreferrer">
+                            X(Twitter): @yakshawan
+                        </a>
+                     </p>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========= Footer ========= -->
+    <footer>
+        <p>© 2025 Yakshawan. All rights reserved.</p>
+    </footer>
+
+    <!-- ========= Floating Download Button ========= -->
+    <!-- 애니메이션 적용될 id 유지 -->
+    <a href="#download" id="floating-download-btn">
+        무료로<br>다운받기
+    </a>
+
+    <!-- ========= Lightbox Structure (Hidden by default) ========= -->
+    <div id="lightbox" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged screenshot">
+            <span class="lightbox-close">×</span>
+        </div>
+    </div>
+    <!-- ========= Lightbox Structure End ========= -->
+
+    <script>
+        // ========= Character Animation (Existing) =========
+        const characterImages = document.querySelectorAll('.character-animation img');
+        let currentImageIndex = 0;
+        if (characterImages.length > 0) {
+            // Remove active class from all initially
+            characterImages.forEach(img => img.classList.remove('active'));
+            // Find the one with the active class or set the first one
+            const initiallyActive = document.querySelector('.character-animation img.active');
+            if (initiallyActive) {
+                 currentImageIndex = Array.from(characterImages).indexOf(initiallyActive);
+            } else {
+                // If no active class set in HTML, set the first one active
+                characterImages[0].classList.add('active');
+            }
+
+            setInterval(() => {
+                characterImages[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % characterImages.length;
+                characterImages[currentImageIndex].classList.add('active');
+            }, 1500);
+        }
+
+        // ========= Gallery Lightbox (New) =========
+        const galleryImages = document.querySelectorAll('#gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('visible'); // Use a class for visibility and transition
+            });
+        });
+
+        // Close lightbox on clicking the close button
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('visible');
+        });
+
+        // Close lightbox on clicking outside the image (on the overlay)
+        lightbox.addEventListener('click', (e) => {
+            // Check if the click target is the overlay itself, not the image or button
+            if (e.target === lightbox) {
+                lightbox.classList.remove('visible');
+            }
+        });
+
+        // Optional: Close lightbox on pressing the Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('visible')) {
+                lightbox.classList.remove('visible');
+            }
+        });
+
+        // ========= Scroll Animation (New) =========
+        // Select elements to animate
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Element is in viewport, make it visible
+                    entry.target.classList.add('visible');
+                    // Stop observing once it's visible if you only want the animation once
+                    observer.unobserve(entry.target);
+                }
+                // If you want it to animate again when scrolling back up,
+                // add an else block here to remove the 'visible' class
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Start animation slightly before it reaches the bottom of the viewport
+        });
+
+        // Add the initial hidden class and observe elements
+        elementsToAnimate.forEach(element => {
+            element.classList.add('hidden');
+            observer.observe(element);
+        });
+
+
+        // ========= Floating Download Button Smooth Scroll (Existing) =========
+        const floatingBtn = document.getElementById('floating-download-btn');
+        if(floatingBtn) {
+            floatingBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = document.getElementById('download');
+                if(targetSection) { targetSection.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        }
+
+    </script>
+
+</body>
+</html>

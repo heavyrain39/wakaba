@@ -1,0 +1,640 @@
+/* ========= Web Font Definitions (@font-face) ========= */
+@font-face {
+    font-family: 'Gmarket Sans'; /* 지마켓 산스 폰트 이름 정의 */
+    src: url('fonts/GmarketSansMedium.woff') format('woff'); /* .woff 파일 경로 */
+    font-weight: 500; /* Medium 굵기 지정 */
+    font-display: swap;
+}
+
+/* Gmarket Sans Bold 파일이 없으므로 해당 @font-face 정의는 삭제합니다. */
+/* 브라우저가 font-weight: 700 요청 시 Medium (500) 폰트를 합성하여 볼드 효과를 냅니다. */
+
+@font-face {
+    font-family: 'Pretendard'; /* 프리텐다드 폰트 이름 정의 */
+    src: url('fonts/Pretendard-Medium.woff') format('woff'); /* .woff 파일 경로 */
+    font-weight: 500; /* Medium 굵기 지정 */
+    font-display: swap;
+}
+
+/* Pretendard Bold 폰트 파일이 있다면 아래 주석을 해제하고 경로를 확인해주세요. */
+/* 만약 Pretendard Bold가 있고 H2에 더 잘 어울린다면 h2에 font-family: 'Pretendard', 'Gmarket Sans', sans-serif; 를 적용할 수도 있습니다. */
+/*
+@font-face {
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+*/
+
+
+/* ========= Global Styles & Resets ========= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* 기본 폰트를 프리텐다드로 변경 */
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--clr-bg-dark); /* 변수 사용 */
+    color: var(--clr-text); /* 변수 사용 */
+    line-height: 1.7;
+    font-size: 16px; /* 기본 크기 */
+    font-weight: 500; /* 기본 굵기를 Medium으로 설정 (Pretendard-Medium 사용) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========= Color Variables (CSS Custom Properties) ========= */
+:root {
+    --clr-mint: #3CB371;          /* MINT_GREEN_MEDIUM */
+    --clr-mint-dark: #2E8B57;     /* MINT_GREEN_DARK */
+    --clr-bg-dark: #1e1e1e;
+    --clr-bg-section: rgba(40, 40, 40, 0.7); /* 섹션 배경 (약간 투명) */
+    --clr-text: #E6E6E6;
+    --clr-text-muted: #a0a0a0;
+    --clr-gold: #FFC800;          /* ACCENT_GOLD */
+    --clr-white: #FFFFFF;
+    --clr-border: #4a4a4a;        /* 어두운 테마용 보더 */
+}
+
+/* ========= Utility Classes ========= */
+.text-justify {
+    text-align: justify;
+}
+
+/* Scroll Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation duration and timing */
+    will-change: opacity, transform; /* Hint browser for performance */
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========= Container & Section Styling ========= */
+section {
+    padding: 4rem 1rem; /* 상하 64px, 좌우 16px */
+}
+/* 섹션 배경 교차 적용 (홀수번째 섹션만 적용) */
+main > section:nth-child(odd):not(#hero) {
+    background-color: var(--clr-bg-section);
+}
+
+.container {
+    max-width: 1140px; /* 최대 너비 */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+}
+.text-content { /* 본문 텍스트 영역 스타일 */
+    max-width: 800px; /* 가독성 위한 최대 너비 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========= Typography ========= */
+h1, h2, h3, h4, h5, h6 {
+    /* 제목 폰트를 지마켓 산스로 변경 */
+    font-family: 'Gmarket Sans', 'Pretendard', sans-serif; /* 지마켓 산스 우선, 없으면 프리텐다드 */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+/* 폰트 계층 조정: h2 > 섹션 h3 > 특징 h3 */
+h1 { font-size: 2.5rem; font-weight: bold; } /* H1도 볼드로 */
+
+h2 { /* 대제목 */
+    font-size: 2rem; /* 기본 크기 */
+    color: var(--clr-mint);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold; /* Gmarket Sans Medium 합성 볼드 */
+}
+h3 { /* 일반 h3 (기본 스타일 - 특징 항목 등에서 사용) */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 500; /* Gmarket Sans Medium */
+}
+
+/* 섹션별 h3 (부제목 - "어떤 게임일까?", "와카바는 누구?" 아래 등) */
+#introduction h3,
+#character h3,
+/* #download h3 (설치 방법, 요구 사양)는 아래에서 별도 조정 */
+#developer h3 {
+    color: var(--clr-mint);
+    font-size: 1.75rem; /* H2보다 작고 일반 H3보다 크게 */
+    text-align: center; /* 대부분 중앙 정렬 */
+    margin-bottom: 1.5rem; /* 마진 조정 */
+    margin-top: 1.5rem;
+    font-weight: 500; /* Gmarket Sans Medium */
+}
+/* 캐릭터 소개 섹션의 부제목만 왼쪽 정렬 유지 */
+#character h3 {
+    text-align: left;
+}
+
+/* 특징 항목 내 h3 (더 작은 제목) */
+#features .feature-item h3 {
+    color: var(--clr-mint);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem; /* 가장 작게 */
+    font-weight: 500; /* Gmarket Sans Medium */
+}
+
+
+p {
+    margin-bottom: 1rem;
+    /* 본문 폰트는 body에서 상속받아 Pretendard Medium 적용됨 */
+}
+
+a {
+    color: var(--clr-mint);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--clr-mint-dark);
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 700; /* 필요시 Bold 굵기 지정 (Pretendard Medium 합성 볼드) */
+}
+
+/* ========= Hero Section (#hero) ========= */
+#hero {
+    position: relative;
+    height: 100vh; /* 화면 전체 높이 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 1rem;
+    background-color: #111; /* 배경 이미지 로드 전 대비 */
+}
+
+#hero .hero-background {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/hero-background.png');
+    background-size: cover; /* 이미지가 영역을 꽉 채우도록 */
+    background-position: center; /* 이미지 중앙을 기준으로 표시 */
+    z-index: 0;
+}
+
+#hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* 어둡게 처리 */
+    z-index: 1; /* 배경 위, 콘텐츠 아래 */
+}
+
+#hero .hero-content {
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+    max-width: 600px; /* 콘텐츠 최대 너비 */
+}
+
+#hero .hero-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; /* 32px */
+    max-width: 90%; /* 모바일 고려 */
+    width: 400px; /* 로고 크기 예시 */
+    height: auto; /* 비율 유지 */
+}
+
+/* Hero 섹션 내 제목/텍스트 스타일 유지 */
+#hero h1 { color: var(--clr-white); margin-bottom: 1rem; font-size: 2.25rem; font-weight: bold; } /* H1도 볼드로 */
+#hero p { color: var(--clr-text); margin-bottom: 0.1rem;font-size: 1.25rem; }
+
+/* ========= Introduction Section (#introduction) ========= */
+#introduction {
+    position: relative; /* 자식 요소(오버레이)의 position 기준 */
+    background-image: url('images/header.png'); /* 이미지 경로 확인! */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 스크롤 시 배경 고정 (패럴랙스 효과) - 선택 사항 */
+    z-index: 0; /* 다른 섹션과의 z-index 관계 고려 */
+}
+
+/* 배경 위에 어두운 오버레이 추가하여 텍스트 가독성 확보 */
+#introduction::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* 투명도 조절 (0.6 ~ 0.8 사이 추천) */
+    z-index: -1; /* 배경 이미지와 콘텐츠 사이 */
+}
+
+/* 콘텐츠 영역이 오버레이 위에 오도록 함 (필요시) */
+#introduction .container {
+    position: relative;
+    z-index: 1;
+}
+
+#introduction .container { max-width: 800px; }
+/* h2 스타일은 Typography 섹션에서 일괄 조정 */
+/* #introduction h3 스타일은 Typography 섹션에서 일괄 조정 */
+#introduction .text-content { max-width: none; }
+
+/* ========= Character Section (#character) ========= */
+#character .container { max-width: 1024px; }
+#character .grid {
+    display: grid;
+    gap: 3rem; /* 48px */
+    align-items: center;
+}
+#character .character-animation-container {
+    position: relative; /* 가상 요소의 기준점 */
+    width: 100%;
+    max-width: 400px; /* 크기 키움 */
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    z-index: 1; /* 이미지가 도형 위에 오도록 */
+}
+
+/* 캐릭터 뒤에 흰색 둥근 직사각형 추가 */
+#character .character-animation-container::before {
+    content: ""; /* 가상 요소 필수 속성 */
+    position: absolute;
+    /* 위치 및 크기 조정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    width: 85%;  /* 컨테이너 너비의 85% (조절 가능) */
+    height: 100%; /* 컨테이너 높이의 100% (조절 가능) */
+    background-color: rgba(255, 255, 255, 1); /* 흰색 배경 (투명도 조절 가능) */
+    border-radius: 30px; /* 모서리 둥글게 (값 조절 가능) */
+    z-index: -1; /* 이미지 뒤로 보내기 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 은은한 그림자 (선택 사항) */
+}
+
+/* 캐릭터 애니메이션 컨테이너 자체에도 z-index 설정 */
+#character .character-animation {
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* 도형 위에 오도록 */
+}
+
+#character .character-animation img {
+   /* 기존 스타일 유지 */
+   position: absolute; inset: 0; width: 100%; height: 100%;
+   object-fit: contain; opacity: 0; transition: opacity 0.5s ease-in-out;
+}
+#character .character-animation img.active { opacity: 1; }
+#character .text-content { max-width: none; margin: 0; } /* 그리드 자식 요소 */
+/* h2 스타일은 Typography 섹션에서 일괄 조정 */
+/* #character h3 스타일은 Typography 섹션에서 일괄 조정 */
+/* 캐릭터 소개 섹션의 부제목만 왼쪽 정렬 유지 */
+
+
+/* ========= Features Section (#features) ========= */
+#features .container { max-width: 1024px; }
+#features .grid {
+    display: grid;
+    gap: 2rem; /* 32px */
+    grid-template-columns: 1fr; /* 기본 1열 */
+}
+#features .feature-item {
+    background-color: var(--clr-bg-section);
+    padding: 1.5rem; /* 24px */
+    border-radius: 0.5rem; /* 8px */
+    position: relative;
+    overflow: hidden;
+    min-height: 180px; /* 최소 높이 조정 */
+    border: 1px solid var(--clr-border); /* 약간의 테두리 */
+}
+/* #features .feature-item h3 스타일은 Typography 섹션에서 일괄 조정 */
+#features .feature-item p { color: var(--clr-text-muted); margin-bottom: 0; }
+/* 티저 이미지 스타일 */
+#features .teaser-images { position: absolute; bottom: -15px; right: -20px; width: 50%; height: 50%; opacity: 0.2; pointer-events: none; }
+#features .teaser-images img { position: absolute; bottom: 0; right: 0; width: 80%; height: auto; border-radius: 4px; }
+#features .teaser-images img:nth-child(1) { transform: translate(15%, 15%) rotate(12deg); z-index: 3; }
+#features .teaser-images img:nth-child(2) { transform: translate(0, 0) rotate(-5deg); z-index: 2; }
+#features .teaser-images img:nth-child(3) { transform: translate(5%, 5%) rotate(2deg); z-index: 1; }
+
+/* ========= Gallery Section (#gallery) ========= */
+#gallery .container { max-width: 800px; } /* 1열이므로 최대 너비 줄임 */
+#gallery .gallery-intro { text-align: center; margin-bottom: 2rem; }
+#gallery .grid {
+    display: grid;
+    gap: 1.5rem; /* 24px */
+    grid-template-columns: 1fr; /* 항상 1열 */
+}
+#gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* 1열일 때 이미지 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    display: block; /* 중앙 정렬 위해 */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* 클릭 가능 표시 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#gallery img:hover { opacity: 0.85; transform: scale(1.02); }
+
+/* Lightbox styles */
+.lightbox-overlay {
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    z-index: 100; /* Ensure it's on top of everything */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Start invisible for fade-in */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Fade-in/out transition */
+}
+
+.lightbox-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative; /* For close button positioning */
+    max-width: 90%; /* Max width of the image container */
+    max-height: 90%; /* Max height of the image container */
+}
+
+.lightbox-content img {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Image fits within content container */
+    max-height: 100%; /* Image fits within content container */
+    object-fit: contain; /* Ensure aspect ratio is maintained */
+    margin: 0; /* Override gallery img margin */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow to enlarged image */
+    border-radius: 0.5rem; /* Match gallery image border-radius */
+    cursor: default; /* Change cursor back to default */
+    transition: none; /* Remove gallery hover transition */
+    transform: none; /* Remove gallery hover transform */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -15px; /* Position above the image */
+    right: -15px; /* Position to the right of the image */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #000; /* Dark color for the symbol */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Make it round */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 110; /* Ensure it's above the image */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background-color: #fff;
+    color: #c00; /* Change color on hover */
+}
+
+
+/* ========= Download Section (#download) ========= */
+#download .container { max-width: 768px; text-align: center; }
+#download .platform-info { margin-bottom: 1rem; font-weight: 600; }
+#download .button-wrapper { display: flex; justify-content: center; margin-bottom: 2rem; } /* 버튼 아래 마진 유지 */
+#download .download-button {
+    display: inline-block; background-color: var(--clr-mint); color: var(--clr-white);
+    font-weight: 700; padding: 0.75rem 2rem; border-radius: 9999px;
+    transition: background-color 0.3s ease; font-size: 1.125rem;
+}
+#download .download-button:hover { background-color: var(--clr-mint-dark); text-decoration: none; }
+
+/* 요구 사양 제목 스타일 (Typography 섹션에서 일괄 관리) */
+#download h3 { /* 설치 방법, 요구 사양 h3 */
+    color: var(--clr-mint);
+    font-size: 1.75rem; /* H2보다 작고 일반 H3보다 크게 */
+    text-align: center;
+    margin-top: 1.5rem; /* 위쪽 마진 */
+    margin-bottom: 1rem; /* 아래쪽 마진 */
+    font-weight: 500; /* Gmarket Sans Medium */
+}
+
+/* 요구 사양 텍스트 단락에 마진 추가 */
+.requirements-text {
+    margin-bottom: 2rem; /* 설치 방법 섹션과의 간격 확보 */
+}
+
+
+/* 설치 방법 리스트 스타일 */
+#download ol { list-style-position: inside; text-align: left; max-width: 448px; margin: 0 auto 2rem auto; padding-left: 1.5rem; /* 리스트 들여쓰기 */ }
+#download ol li { margin-bottom: 0.5rem; }
+
+
+/* FAQ Section Styles */
+.faq-section {
+    margin-top: 3rem; /* Add space above FAQ */
+    text-align: left; /* FAQ text aligns left */
+    border-top: 1px solid var(--clr-border); /* Optional: separator line */
+    padding-top: 2rem; /* Space above separator */
+}
+/* FAQ 섹션 h3 스타일은 Typography 섹션에서 일괄 관리 */
+.faq-section h3 {
+     text-align: center; /* Center the FAQ title */
+     margin-bottom: 2rem; /* Space below FAQ title */
+     color: var(--clr-mint); /* Match other h3 color */
+     font-size: 1.75rem; /* Match other h3 size */
+     font-weight: 500; /* Gmarket Sans Medium */
+}
+.faq-item {
+    margin-bottom: 1.5rem; /* Space between FAQ items */
+    padding-bottom: 1.5rem; /* Space below FAQ item */
+    border-bottom: 1px dashed var(--clr-border); /* Separator between items */
+}
+.faq-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none; /* No border for the last item */
+}
+.faq-item p {
+    margin-bottom: 0.5rem; /* Space between Q and A */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+.faq-item p strong {
+    color: var(--clr-gold); /* Make Q more prominent */
+    font-weight: bold; /* Pretendard Medium 합성 볼드 */
+}
+
+
+/* ========= Developer Section (#developer) ========= */
+#developer {
+    position: relative; /* 오버레이 기준점 */
+    background-image: url('images/wakaba-hoodie-street.png'); /* 새 이미지 경로 적용! */
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll; /* 스크롤 효과 (선택 사항) */
+    z-index: 0;
+    /* 기존 섹션 배경색 제거 */
+    /* background-color: var(--clr-bg-section); */
+}
+
+/* 어두운 오버레이 추가 */
+#developer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* 어둡게 (0.7 ~ 0.8 추천) */
+    z-index: -1;
+}
+
+#developer .container {
+    position: relative; /* 콘텐츠가 오버레이 위에 오도록 */
+    z-index: 1;
+    max-width: 800px;
+}
+
+/* h2 스타일은 Typography 섹션에서 일괄 조정 */
+/* #developer h3 스타일은 Typography 섹션에서 일괄 조정 */
+#developer .text-content { /* 내부 텍스트 컨테이너 */
+    max-width: none; /* container가 제어하므로 해제 */
+    background-color: rgba(30, 30, 30, 0.5); /* 텍스트 영역 배경 살짝 추가 (선택 사항) */
+    padding: 1.5rem; /* 텍스트 영역 패딩 (선택 사항) */
+    border-radius: 0.5rem; /* 텍스트 영역 모서리 둥글게 (선택 사항) */
+}
+#developer .developer-link {
+    text-align: center;
+    margin-top: 1.5rem; /* 링크 위 여백 조정 */
+}
+#developer .developer-link a {
+    display: inline-block;
+    font-weight: 600; /* Pretendard Medium 합성 볼드 */
+    font-size: 1.25rem;
+    /* color: var(--clr-mint); 이미 a 태그 기본 스타일로 적용됨 */
+}
+
+/* ========= Footer ========= */
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--clr-text-muted);
+    border-top: 1px solid var(--clr-border);
+    font-size: 0.875rem; /* 14px */
+}
+
+/* ========= Floating Download Button ========= */
+#floating-download-btn {
+    position: fixed;
+    bottom: 3rem; /* 48px (조정됨) */
+    right: 3rem; /* 48px (조정됨) */
+    z-index: 50;
+    background-color: var(--clr-mint);
+    color: var(--clr-white);
+    width: 5rem; /* 80px */
+    height: 5rem; /* 80px */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.875rem; /* 14px */
+    text-decoration: none; /* 링크 밑줄 제거 */
+
+    /* Pulsating Animation */
+    animation: pulse 2s infinite ease-in-out; /* Animation name, duration, loop, timing */
+}
+
+#floating-download-btn:hover {
+    background-color: var(--clr-mint-dark);
+    transform: scale(1.05); /* 약간 커지는 효과 */
+    text-decoration: none; /* 호버 시에도 밑줄 제거 */
+    animation: none; /* Stop pulsating on hover */
+}
+
+/* Define Pulsating Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly larger */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+/* ========= Responsive Design (@media queries) ========= */
+
+/* Medium screens (Tablets, small desktops) */
+@media (min-width: 768px) {
+    body { font-size: 17px; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; } /* Adjust h2 size */
+    h3 { font-size: 1.75rem; } /* Adjust h3 size */
+    section { padding: 5rem 2rem; }
+
+    #hero h1 { font-size: 2.75rem; }
+    #hero p { font-size: 1.5rem; }
+    #hero .hero-logo { width: 500px; } /* 로고 크기 증가 */
+
+    #character .grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Features 섹션: 768px 이상에서 2열 */
+    #features .grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Gallery 섹션: 모든 크기에서 1열 유지 (수정 없음) */
+    #gallery .container { max-width: 700px; } /* 1열일 때 너비 살짝 조정 */
+    #gallery img { max-width: 100%; } /* 최대 너비 100%로 변경 */
+
+    #download ol { max-width: 500px; }
+    .faq-section { max-width: 600px; margin-left: auto; margin-right: auto;} /* FAQ 너비 제한 및 중앙 정렬 */
+}
+
+/* Large screens (Desktops) */
+@media (min-width: 1024px) {
+    body { font-size: 18px; }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.75rem; } /* Adjust h2 size */
+    h3 { font-size: 1.875rem; } /* 30px, Adjust h3 size */
+    section { padding: 6rem 2rem; }
+
+    #hero h1 { font-size: 3rem; }
+    #hero .hero-logo { width: 600px; } /* 로고 크기 더 증가 */
+
+    /* Features 섹션: 1024px 이상에서도 2열 유지 */
+    #features .container { max-width: 1140px; } /* 컨테이너 너비 복원 */
+
+    /* Gallery 섹션: 모든 크기에서 1열 유지 (수정 없음) */
+    #gallery .container { max-width: 768px; } /* 1열 너비 유지 */
+
+     .faq-section { max-width: 700px; } /* FAQ 너비 제한 및 중앙 정렬 */
+}
