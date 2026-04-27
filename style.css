@@ -437,13 +437,16 @@ strong {
 }
 #download .button-wrapper {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin: 0 auto 2.75rem auto;
 } /* 버튼 아래 마진 유지 */
 #download .download-button {
-    display: inline-block; background-color: var(--clr-mint); color: var(--clr-white);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: min(100%, 360px); min-height: 3.5rem;
+    background-color: var(--clr-mint); color: var(--clr-white);
     font-weight: 700; padding: 0.75rem 2rem; border-radius: 9999px;
     transition: background-color 0.3s ease; font-size: 1.125rem;
 }
@@ -550,11 +553,15 @@ strong {
     padding: 1.5rem; /* 텍스트 영역 패딩 (선택 사항) */
     border-radius: 0.5rem; /* 텍스트 영역 모서리 둥글게 (선택 사항) */
 }
-#developer .developer-link {
+#developer .developer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     text-align: center;
     margin-top: 1.5rem; /* 링크 위 여백 조정 */
 }
-#developer .developer-link a {
+#developer .developer-links a {
     display: inline-block;
     font-weight: 600; /* Pretendard Medium 합성 볼드 */
     font-size: 1.25rem;
