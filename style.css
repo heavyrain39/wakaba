@@ -428,13 +428,35 @@ strong {
 /* ========= Download Section (#download) ========= */
 #download .container { max-width: 768px; text-align: center; }
 #download .platform-info { margin-bottom: 1rem; font-weight: 600; }
-#download .button-wrapper { display: flex; justify-content: center; margin-bottom: 2rem; } /* 버튼 아래 마진 유지 */
+#download .web-version-notice {
+    margin: 0 auto 1.5rem auto;
+    max-width: 600px;
+}
+#download .web-version-notice p:last-child {
+    color: var(--clr-text-muted);
+}
+#download .button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+} /* 버튼 아래 마진 유지 */
 #download .download-button {
     display: inline-block; background-color: var(--clr-mint); color: var(--clr-white);
     font-weight: 700; padding: 0.75rem 2rem; border-radius: 9999px;
     transition: background-color 0.3s ease; font-size: 1.125rem;
 }
 #download .download-button:hover { background-color: var(--clr-mint-dark); text-decoration: none; }
+#download .download-button-secondary {
+    background-color: transparent;
+    border: 1px solid var(--clr-mint);
+    color: var(--clr-mint);
+}
+#download .download-button-secondary:hover {
+    background-color: rgba(60, 179, 113, 0.12);
+    color: var(--clr-white);
+}
 
 /* 요구 사양 제목 스타일 (Typography 섹션에서 일괄 관리) */
 #download h3 { /* 설치 방법, 요구 사양 h3 */
